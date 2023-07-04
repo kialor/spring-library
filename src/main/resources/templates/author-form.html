@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author Form</title>
+</head>
+<body>
+<h1>Author Form</h1>
+<form th:action="@{/authors/new}" method="post" th:object="${author}">
+  <input type="text" th:field="*{name}" placeholder="Name" required/><br/>
+  <button type="submit">Create</button>
+</form>
+<a th:href="@{/authors}">Back to Author List</a>
+</body>
+</html>

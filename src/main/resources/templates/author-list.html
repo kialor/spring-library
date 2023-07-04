@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Authors</title>
+</head>
+<body>
+<h1>Author List</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="author : ${authors}">
+    <td th:text="${author.id}"></td>
+    <td th:text="${author.name}"></td>
+    <td>
+      <a th:href="@{/authors/{id}(id=${author.id})}">Details</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<a href="/authors/new">Add Author</a>
+<a th:href="@{/}">Back to Library</a>
+</body>
+</html>
